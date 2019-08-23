@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #Fedora30
-sudo dnf update
-sudo dnf -y httpd
+sudo dnf -y update
+sudo dnf -y install httpd
 sudo systemctl enable httpd
 sudo setsebool -P httpd_can_network_connect on
 sudo systemctl start httpd
