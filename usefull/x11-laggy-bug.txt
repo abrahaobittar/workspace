@@ -1,0 +1,13 @@
+How to correct X11 laggy bug when use laptop function keys (Increse/decrease bright or CTRL scroll for changing font size).
+
+Open gnome-terminal or you preference terminal:
+
+With nano, edit this file:
+
+nano /usr/share/X11/xkb/symbols/br
+
+Just comment this line bellow with '//'
+
+//modifier_map Mod3 { Scroll_Lock };
+
+Restart or logout the machine.
