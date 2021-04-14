@@ -1,5 +1,5 @@
 # Utilizando a versão oficial com PHP versão 7.3.6 e Apache
-FROM php:7.3.6-apache-stretch
+FROM php:7.4-apache-stretch
 
 # Habilitando o modo de reescrita do Apache
 RUN a2enmod rewrite
@@ -10,7 +10,7 @@ RUN a2enmod rewrite
 # pois ele instala e configura as extensões baixadas
 RUN docker-php-ext-install pdo pdo_mysql
 
-# Instalação e configuração do XDebug
+# Instala�ao e configura�ao do XDebug
 RUN yes | pecl install xdebug \
     && echo "zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so)" > /usr/local/etc/php/conf.d/xdebug.ini \
     && echo "xdebug.remote_enable=on" >> /usr/local/etc/php/conf.d/xdebug.ini \
@@ -21,3 +21,6 @@ RUN yes | pecl install xdebug \
     && echo "xdebug.idekey=docker" >> /usr/local/etc/php/conf.d/xdebug.ini \
     && echo "xdebug.remote_log=/var/log/xdebug.log" >> /usr/local/etc/php/conf.d/xdebug.ini \
     && echo "xdebug.default_enable=on" >> /usr/local/etc/php/conf.d/xdebug.ini
+
+
+#docker run -it -d --name phpxdebug -p 80:80 -v .:/var/www/html abrahao1988/phpxdebug /bin/bash
