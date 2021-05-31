@@ -1,0 +1,67 @@
+Tutorial para instalar Oracle Client em ambientes Ubuntu.
+Referência: https://help.ubuntu.com/community/Oracle%20Instant%20Client
+Homologado para nova iso do pdv: ubuntu 20.04 x86_64
+
+1 - Baixar os arquivos RPM
+https://www.oracle.com/database/technologies/instant-client/downloads.html
+
+Baixar:
+oracle-instant-client-basic
+oracle-instant-client-sqlplus
+oracle-instant-client-devel
+
+2 - Baixar aplicativo alien para converter os arquivos .rpm em .deb e converta os pacotes baixados:
+sudo apt install alien
+alien -i oracle-instantclient12.1-basic-12.1.0.2.0-1.x86_64.rpm
+alien -i oracle-instantclient12.1-sqlplus-12.1.0.2.0-1.x86_64.rpm
+alien -i oracle-instantclient12.1-devel-12.1.0.2.0-1.x86_64.rpm
+
+obs: Se for utilizar um client diferente da arquitetura do sistema operacional o .deb gerado não vai funcionar
+por exemplo: no caso do PDV eu preciso utilizar o instant-client 32 bits em uma plataforma 64 bits (ubuntu 20.04 por ex)
+Sendo assim é necessário usar o alien para converter o rpm para tgz e depois para .deb
+
+Convertendo todos pacotes para TGZ
+sudo alien -c --to-tgz somepackage.rpm
+sudo alien -c --to-tgz oracle-instantclient12.1-basic-12.1.0.2.0-1.x86.rpm
+sudo alien -c --to-tgz oracle-instantclient12.1-sqlplus-12.1.0.2.0-1.x86.rpm
+sudo alien -c --to-tgz oracle-instantclient12.1-devel-12.1.0.2.0-1.x86.rpm
+
+e depois:
+sudo alien -c oracle-instantclient12.1-basic-12.1.0.2.0-1.x86.tgz
+sudo alien -c oracle-instantclient12.1-sqlplus-12.1.0.2.0-1.x86.tgz
+sudo alien -c oracle-instantclient12.1-devel-12.1.0.2.0-1.x86.tgz
+
+Será gerado o arquivo .deb com arquitetura 32 bits
+Referência: https://www.maketecheasier.com/convert-32bit-rpm-to-deb-64bit/
+
+3 - Baixe a dependência libaio:
+sudo apt install libaio1
+
+caso o instant-client seja 32bits execute:
+sudo apt install libaio1:i386
+
+4 - Criar uma configuracao no ldconf para jogar no path o diretório do instantclient
+sudo vi /etc/ld.so.conf.d/oracle.conf && sudo chmod o+r /etc/ld.so.conf.d/oracle.conf
+Adicione o conteudo
+usr/lib/oracle/xx(versao)/client64/lib/
+ou
+/usr/lib/oracle/xx(versao)/client/lib/
+
+sudo ldconfig
+
+5 - Configurar o TNSNAMES
+copie o arquivo tnsnames.ora para o diretório abaixo:
+/lib/oracle/xx/client
+
+Eu não lembro onde li mas é preciso colocar o TNS_ADMIN no path para funcionar
+Primeiramente eu fiz uma configuracao por script (no caso do pdv) mas o Renato me disse para fazer de uma forma diferente
+
+Adicione a linha abaixo no diretorio : /etc/environment
+TNS_ADMIN=/lib/oracle/XX(Versao client)/client
+
+obs: também vi que existe outro diretório criado: /usr/lib/oracle/xx/client ainda não sei pra que serve
+mas deve ser regulado para escala usuário e o outro para escala global do SO
+
+6 - Para testar a conexao
+sqlplus username/password@//dbhost:1521/SID
+por ex: sqlplus system/admoraclegeweb@//192.168.1.254:1521/GEWEB
