@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Tested for Fedora30
+#Tested in Fedora30
 sudo dnf -y update
 sudo dnf -y install httpd
 sudo systemctl enable httpd

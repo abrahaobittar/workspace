@@ -1,0 +1,19 @@
+Windows Registry Editor Version 5.00
+
+; Created by: Shawn Brink
+; Created on: August 10th 2016
+; Updated on: October 8th 2019
+; Tutorial: https://www.tenforums.com/tutorials/59686-open-command-window-here-administrator-add-windows-10-a.html
+
+
+
+[-HKEY_CLASSES_ROOT\Directory\shell\OpenCmdHereAsAdmin]
+
+[-HKEY_CLASSES_ROOT\Directory\Background\shell\OpenCmdHereAsAdmin]
+
+[-HKEY_CLASSES_ROOT\Drive\shell\OpenCmdHereAsAdmin]
+
+[-HKEY_CLASSES_ROOT\LibraryFolder\background\shell\OpenCmdHereAsAdmin]
+
+[-HKEY_CLASSES_ROOT\LibraryFolder\background\shell\OpenCmdHereAsAdmin\command]
+
