@@ -1,15 +1,13 @@
 version: "3"
 services:
-  phpxdebug:
+  phpdebug:
     build:
       context: .
       dockerfile: ./Dockerfile
     image: phpxdebug
-    container_name: phpxdebug1.0
+    container_name: php8
     restart: always
-    environment:
-      XDEBUG_CONFIG: remote_host=host.docker.internal remote_port=9000 remote_enable=1
     ports:
       - "80:80"
     volumes:
-      - "/home/abrahao/Code/php:/var/www/html:Z"
+      - "~/Code/php:/var/www/html:z"
