@@ -1,6 +1,4 @@
 #!/bin/bash
-
-cd /home/abrahao/Code
-sudo -S 123 curl -fsSL https://get.docker.com | bash
-sudo -S 123 usermod -aG docker $USER
-sudo -S 123 apt install docker-compose
+echo 123 | sudo -S curl -fsSL https://get.docker.com | bash
+echo 123 | sudo -S dnf install docker-compose -y
+echo 123 | sudo -S usermod -aG docker $USER
