@@ -19,7 +19,7 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
--- bind ROFI 
+-- bind ROFI
 awful.key({modkey}, "d", function()
     awful.spawn.with_shell("rofi -show drun &>> /tmp/rofi.log")
     end, { ... } }),
@@ -57,7 +57,7 @@ beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 -- terminal = "xterm"
 terminal = "tilix"
 
-editor = os.getenv("EDITOR") or "vi"
+editor = os.getenv("EDITOR") or "micro"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -72,7 +72,7 @@ autorun = true
 autorunApps =
 {
    "fehbg",
-   
+
 }
 if autorun then
    for app = 1, #autorunApps do
