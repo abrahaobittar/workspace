@@ -1,0 +1,13 @@
+version: "3"
+services:
+  phpdebug:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: phpxdebug
+    container_name: php8
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - "~/Code/php:/var/www/html:z"
