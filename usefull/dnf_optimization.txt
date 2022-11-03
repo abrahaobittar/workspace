@@ -2,11 +2,7 @@
 #Reference: https://dnf.readthedocs.io/en/latest/conf_ref.html
 
 sudo nano /etc/dnf/dnf.conf
-
 metadata_expire=2d
 max_parallel_downloads=10
 
-
 #Credits to: https://medium.com/tech-notes-and-geek-stuff/
-
-
