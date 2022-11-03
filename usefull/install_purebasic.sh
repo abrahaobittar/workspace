@@ -1,7 +1,4 @@
 #!/bin/bash
-#Purebasic install
-sudo dnf install gcc g++ libgnome gtk3 gtk3-devel
-export PUREBASIC_HOME=~/purebasic
 
 #Homologado Linux Mint 21 x64
 #Data 27/07/2022
@@ -32,13 +29,13 @@ echo "[Desktop Entry]
 " > /home/$USER/Desktop/PureBasic_600.desktop
 
 #Atalho purebasic_5.43 32bits
-#echo "[Desktop Entry]
-#    Type=Application
-#    Icon=/home/abrahao/Downloads/purebasic_543/logo.png
-#    Name=Purebasic v5.43
-#    Comment=Developer Utility
-#    Exec=/home/abrahao/Downloads/purebasic_543/compilers/purebasic
-#    Path=/home/abrahao/Downloads/purebasic_543/compilers
-#    StartupNotify=false
-#    Terminal=false
-#" > /home/$USER/Desktop/PureBasic_543.desktop
+echo "[Desktop Entry]
+    Type=Application
+    Icon=/home/abrahao/Downloads/purebasic_543/logo.png
+    Name=Purebasic v5.43
+    Comment=Developer Utility
+    Exec=/home/abrahao/Downloads/purebasic_543/compilers/purebasic
+    Path=/home/abrahao/Downloads/purebasic_543/compilers
+    StartupNotify=false
+    Terminal=false
+" > /home/$USER/Desktop/PureBasic_543.desktop
