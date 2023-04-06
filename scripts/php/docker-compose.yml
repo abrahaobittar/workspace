@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: ./Dockerfile
     image: phpxdebug
-    container_name: php8
+    container_name: php8.1
     restart: always
     ports:
       - "80:80"
