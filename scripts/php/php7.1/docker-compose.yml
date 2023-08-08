@@ -1,0 +1,12 @@
+version: "3"
+services:
+  web:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: php7.1
+    restart: always
+    ports:
+      - "8080:80"
+    volumes:
+      - "~/Code/php:/var/www/html:z"

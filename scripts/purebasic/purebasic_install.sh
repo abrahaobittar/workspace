@@ -1,6 +1,7 @@
 #!/bin/bash
 #Fedora
 sudo dnf install gcc g++ libgnome gtk3 gtk3-devel
+sudo dnf install @development-tools
 export PUREBASIC_HOME=~/purebasic
 
 #Homologado Linux Mint 21 x64
