@@ -16,10 +16,10 @@ alien -i oracle-instantclient12.1-basic-12.1.0.2.0-1.x86_64.rpm
 alien -i oracle-instantclient12.1-sqlplus-12.1.0.2.0-1.x86_64.rpm
 alien -i oracle-instantclient12.1-devel-12.1.0.2.0-1.x86_64.rpm
 
+****** IMPORTANTE ***** (se o SO for 64bits e o client precisa ser x86)
 obs: Se for utilizar um client diferente da arquitetura do sistema operacional o .deb gerado não vai funcionar
 por exemplo: no caso do PDV eu preciso utilizar o instant-client 32 bits em uma plataforma 64 bits (ubuntu 20.04 por ex)
 Sendo assim é necessário usar o alien para converter o rpm para tgz e depois para .deb
-
 Convertendo todos pacotes para TGZ
 sudo alien -c --to-tgz somepackage.rpm
 sudo alien -c --to-tgz oracle-instantclient12.1-basic-12.1.0.2.0-1.x86.rpm

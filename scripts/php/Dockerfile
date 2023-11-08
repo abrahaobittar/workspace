@@ -1,4 +1,4 @@
-FROM php:8.0-apache
+FROM php:8.1.0-apache
 
 # Habilitando o modo de reescrita do Apache
 RUN a2enmod rewrite
@@ -16,7 +16,7 @@ RUN curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/yout
 RUN chmod +x /usr/local/bin/youtube-dl
 
 #Instalacao e configuracao vscode3.0
-RUN yes | pecl install xdebug-3.0.0 \
+RUN yes | pecl install xdebug-3.2.0 \
     && echo "zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so)" > /usr/local/etc/php/conf.d/xdebug.ini \
     && echo "xdebug.mode=develop,coverage,debug" >> /usr/local/etc/php/conf.d/xdebug.ini \
     && echo "xdebug.discover_client_host=true" >>  /usr/local/etc/php/conf.d/xdebug.ini \
