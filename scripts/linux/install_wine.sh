@@ -1,6 +1,8 @@
 #!/bin/bash
 
-#Testado em Ubuntu20.04 x86_x64
+#Distros testadas:
+#Xubuntu 20.04.06
+
 sudo dpkg --add-architecture i386 && sudo apt update
 wget -qO- https://dl.winehq.org/wine-builds/winehq.key | sudo apt-key add -
 sudo apt install software-properties-common

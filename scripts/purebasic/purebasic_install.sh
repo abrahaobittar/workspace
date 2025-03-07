@@ -35,11 +35,11 @@ echo "[Desktop Entry]
 #Atalho purebasic_5.43 32bits
 #echo "[Desktop Entry]
 #    Type=Application
-#    Icon=/home/abrahao/Downloads/purebasic_543/logo.png
+#    Icon=/home/abrahao/apps/purebasic5/logo.png
 #    Name=Purebasic v5.43
 #    Comment=Developer Utility
-#    Exec=/home/abrahao/Downloads/purebasic_543/compilers/purebasic
-#    Path=/home/abrahao/Downloads/purebasic_543/compilers
+#    Exec=/home/abrahao/apps/purebasic5/compilers/purebasic
+#    Path=/home/abrahao/apps/purebasic5/compilers
 #    StartupNotify=false
 #    Terminal=false
-#" > /home/$USER/Desktop/PureBasic_543.desktop
+#" > /home/$USER/Desktop/PureBasic_5.desktop
